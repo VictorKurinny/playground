@@ -1,5 +1,5 @@
 //
-//  01.swift
+//  MainScreenViewController.swift
 //  WeakifyAdapterExample
 //
 //  Created by Victor Kurinny on 30.04.2020.
@@ -8,8 +8,8 @@
 
 import UIKit
 
-final class MainScreenViewController: UIViewController {
-    required init(presenter: MainScreenPresenter) {
+final class MainScreenViewController: UIViewController, MainScreenViewable {
+    required init(presenter: MainScreenPresentation) {
         self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
     }
@@ -27,5 +27,5 @@ final class MainScreenViewController: UIViewController {
         //some logic
     }
 
-    private let presenter: MainScreenPresenter
+    private let presenter: MainScreenPresentation
 }

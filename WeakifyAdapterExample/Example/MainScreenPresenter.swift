@@ -8,10 +8,14 @@
 
 import Foundation
 
-final class MainScreenPresenter {
-    weak var view: MainScreenViewController?
+final class MainScreenPresenter: MainScreenPresentation {
+    init(view: MainScreenViewable) {
+        self.view = view
+    }
 
     func viewDidAppear() {
-        view?.render(status: "Some status")
+        view.render(status: "Some status")
     }
+
+    private let view: MainScreenViewable
 }

@@ -10,6 +10,9 @@
 		579777AE245B506D000AE912 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579777AD245B506D000AE912 /* MainScreenViewController.swift */; };
 		579777B0245B52A0000AE912 /* MainScreenComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579777AF245B52A0000AE912 /* MainScreenComposer.swift */; };
 		579777B2245B52DC000AE912 /* MainScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579777B1245B52DC000AE912 /* MainScreenPresenter.swift */; };
+		57A09D8B245EA659003FC1D9 /* SOLID.readme in Sources */ = {isa = PBXBuildFile; fileRef = 57A09D8A245EA659003FC1D9 /* SOLID.readme */; };
+		57A09D8D245EAA4A003FC1D9 /* MainScreenPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A09D8C245EAA4A003FC1D9 /* MainScreenPresentation.swift */; };
+		57A09D8F245EAA6F003FC1D9 /* MainScreenViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A09D8E245EAA6F003FC1D9 /* MainScreenViewable.swift */; };
 		57C6D51624588D020009F842 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C6D51524588D020009F842 /* AppDelegate.swift */; };
 		57C6D51D24588D020009F842 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57C6D51B24588D020009F842 /* Main.storyboard */; };
 		57C6D52224588D030009F842 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57C6D52024588D030009F842 /* LaunchScreen.storyboard */; };
@@ -19,6 +22,9 @@
 		579777AD245B506D000AE912 /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
 		579777AF245B52A0000AE912 /* MainScreenComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenComposer.swift; sourceTree = "<group>"; };
 		579777B1245B52DC000AE912 /* MainScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenPresenter.swift; sourceTree = "<group>"; };
+		57A09D8A245EA659003FC1D9 /* SOLID.readme */ = {isa = PBXFileReference; lastKnownFileType = text; path = SOLID.readme; sourceTree = "<group>"; };
+		57A09D8C245EAA4A003FC1D9 /* MainScreenPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenPresentation.swift; sourceTree = "<group>"; };
+		57A09D8E245EAA6F003FC1D9 /* MainScreenViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewable.swift; sourceTree = "<group>"; };
 		57C6D51224588D020009F842 /* WeakifyAdapterExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeakifyAdapterExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57C6D51524588D020009F842 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57C6D51C24588D020009F842 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -40,9 +46,12 @@
 		579777AB245B4F55000AE912 /* Example */ = {
 			isa = PBXGroup;
 			children = (
-				579777AD245B506D000AE912 /* MainScreenViewController.swift */,
 				579777AF245B52A0000AE912 /* MainScreenComposer.swift */,
 				579777B1245B52DC000AE912 /* MainScreenPresenter.swift */,
+				579777AD245B506D000AE912 /* MainScreenViewController.swift */,
+				57A09D8A245EA659003FC1D9 /* SOLID.readme */,
+				57A09D8C245EAA4A003FC1D9 /* MainScreenPresentation.swift */,
+				57A09D8E245EAA6F003FC1D9 /* MainScreenViewable.swift */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -147,6 +156,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				579777B0245B52A0000AE912 /* MainScreenComposer.swift in Sources */,
+				57A09D8F245EAA6F003FC1D9 /* MainScreenViewable.swift in Sources */,
+				57A09D8B245EA659003FC1D9 /* SOLID.readme in Sources */,
+				57A09D8D245EAA4A003FC1D9 /* MainScreenPresentation.swift in Sources */,
 				579777B2245B52DC000AE912 /* MainScreenPresenter.swift in Sources */,
 				579777AE245B506D000AE912 /* MainScreenViewController.swift in Sources */,
 				57C6D51624588D020009F842 /* AppDelegate.swift in Sources */,

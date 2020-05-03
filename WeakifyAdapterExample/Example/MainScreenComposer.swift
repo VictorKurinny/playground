@@ -10,9 +10,18 @@ import UIKit
 
 final class MainScreenComposer {
     func composeMainScreen() -> UIViewController {
-        let presenter = MainScreenPresenter()
+        let viewWeakifyAdapter = ViewWeakifyAdapter()
+        let presenter = MainScreenPresenter(view: viewWeakifyAdapter)
         let viewController = MainScreenViewController(presenter: presenter)
-        presenter.view = viewController
+        viewWeakifyAdapter.adaptee = viewController
         return viewController
+    }
+}
+
+final private class ViewWeakifyAdapter: MainScreenViewable {
+    weak var adaptee: (MainScreenViewable & AnyObject)?
+
+    func render(status: String) {
+        adaptee?.render(status: status)
     }
 }
