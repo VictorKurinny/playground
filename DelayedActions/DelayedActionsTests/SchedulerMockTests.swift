@@ -9,40 +9,6 @@
 import XCTest
 @testable import DelayedActions
 
-final class SchedulerMock {
-    init() {
-
-    }
-
-    func schedule(after delay: TimeInterval, block: @escaping () -> Void) {
-        let action = Action(block: block, time: now + delay)
-        actions.append(action)
-        actions.sort { $0.time < $1.time }
-    }
-
-    func timeTravel(by delay: TimeInterval) {
-        let targetNow = now + delay
-
-        while let action = actions.first, action.time <= targetNow {
-            now = action.time
-            action.block()
-            actions.removeFirst()
-        }
-
-        now = targetNow
-    }
-
-    private var now: TimeInterval = 0.0
-    private var actions = [Action]()
-}
-
-extension SchedulerMock {
-    private struct Action {
-        let block: () -> Void
-        let time: TimeInterval
-    }
-}
-
 final class SchedulerMockTests: XCTestCase {
     func test_schedulesActionAfterDelay() {
         let delay = 4.0

@@ -12,6 +12,7 @@
 		57075D48248D11EA0041ED30 /* DelayedActions.h in Headers */ = {isa = PBXBuildFile; fileRef = 57075D3A248D11EA0041ED30 /* DelayedActions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		57075D52248D15A90041ED30 /* RetryUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57075D51248D15A90041ED30 /* RetryUseCase.swift */; };
 		57075D54248D18470041ED30 /* SchedulerMockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57075D53248D18470041ED30 /* SchedulerMockTests.swift */; };
+		57075D56248D1EA60041ED30 /* SchedulerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57075D55248D1EA60041ED30 /* SchedulerMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +34,7 @@
 		57075D47248D11EA0041ED30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57075D51248D15A90041ED30 /* RetryUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetryUseCase.swift; sourceTree = "<group>"; };
 		57075D53248D18470041ED30 /* SchedulerMockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulerMockTests.swift; sourceTree = "<group>"; };
+		57075D55248D1EA60041ED30 /* SchedulerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulerMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				57075D45248D11EA0041ED30 /* RetryUseCaseTests.swift */,
 				57075D47248D11EA0041ED30 /* Info.plist */,
 				57075D53248D18470041ED30 /* SchedulerMockTests.swift */,
+				57075D55248D1EA60041ED30 /* SchedulerMock.swift */,
 			);
 			path = DelayedActionsTests;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57075D56248D1EA60041ED30 /* SchedulerMock.swift in Sources */,
 				57075D46248D11EA0041ED30 /* RetryUseCaseTests.swift in Sources */,
 				57075D54248D18470041ED30 /* SchedulerMockTests.swift in Sources */,
 			);
