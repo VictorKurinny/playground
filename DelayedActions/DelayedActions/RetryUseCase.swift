@@ -15,7 +15,7 @@ final public class RetryUseCase {
     }
 
     public func scheduleRetry() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5) { [weak self] in
+        scheduler.schedule(after: 5) { [weak self] in
             guard let self = self else { return }
 
             self.onRetry()

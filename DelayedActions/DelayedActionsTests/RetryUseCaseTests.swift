@@ -10,14 +10,16 @@ import XCTest
 import DelayedActions
 
 class RetryUseCaseTests: XCTestCase {
-//    func test_retriesAfterDelay() {
-//        let expectation = self.expectation(description: "Wait for retry")
-//        let sut = RetryUseCase {
-//            expectation.fulfill()
-//        }
-//
-//        sut.scheduleRetry()
-//
-//        wait(for: [expectation], timeout: 6.0)
-//    }
+    func test_retriesAfterDelay() {
+        var callbackCalled = false
+        let schedulerMock = SchedulerMock()
+        let sut = RetryUseCase(scheduler: schedulerMock) {
+            callbackCalled = true
+        }
+
+        sut.scheduleRetry()
+        schedulerMock.timeTravel(by: 6.0)
+
+        XCTAssertTrue(callbackCalled)
+    }
 }
