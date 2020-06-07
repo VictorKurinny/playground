@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import DelayedActions
+import DelayedActions
 
 class RetryUseCaseTests: XCTestCase {
 //    func test_retriesAfterDelay() {

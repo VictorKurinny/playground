@@ -6,9 +6,9 @@
 //  Copyright © 2020 VictorKurinny. All rights reserved.
 //
 
-import Foundation
+import DelayedActions
 
-final class SchedulerMock {
+final class SchedulerMock: Scheduling {
     func schedule(after delay: TimeInterval, block: @escaping () -> Void) {
         let action = Action(block: block, time: now + delay)
         actions.append(action)

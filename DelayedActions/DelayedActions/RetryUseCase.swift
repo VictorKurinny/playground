@@ -9,7 +9,8 @@
 import Foundation
 
 final public class RetryUseCase {
-    public init(onRetry: @escaping () -> Void) {
+    public init(scheduler: Scheduling = DispatchQueue.main, onRetry: @escaping () -> Void) {
+        self.scheduler = scheduler
         self.onRetry = onRetry
     }
 
@@ -22,4 +23,5 @@ final public class RetryUseCase {
     }
 
     private let onRetry: () -> Void
+    private let scheduler: Scheduling
 }

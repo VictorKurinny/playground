@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import DelayedActions
+import DelayedActions
 
 final class SchedulerMockTests: XCTestCase {
     func test_schedulesActionAfterDelay() {

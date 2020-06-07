@@ -13,6 +13,8 @@
 		57075D52248D15A90041ED30 /* RetryUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57075D51248D15A90041ED30 /* RetryUseCase.swift */; };
 		57075D54248D18470041ED30 /* SchedulerMockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57075D53248D18470041ED30 /* SchedulerMockTests.swift */; };
 		57075D56248D1EA60041ED30 /* SchedulerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57075D55248D1EA60041ED30 /* SchedulerMock.swift */; };
+		57075D58248D1FBC0041ED30 /* Scheduling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57075D57248D1FBC0041ED30 /* Scheduling.swift */; };
+		57075D5A248D20380041ED30 /* DispatchQueue+Scheduling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57075D59248D20380041ED30 /* DispatchQueue+Scheduling.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +37,8 @@
 		57075D51248D15A90041ED30 /* RetryUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetryUseCase.swift; sourceTree = "<group>"; };
 		57075D53248D18470041ED30 /* SchedulerMockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulerMockTests.swift; sourceTree = "<group>"; };
 		57075D55248D1EA60041ED30 /* SchedulerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulerMock.swift; sourceTree = "<group>"; };
+		57075D57248D1FBC0041ED30 /* Scheduling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scheduling.swift; sourceTree = "<group>"; };
+		57075D59248D20380041ED30 /* DispatchQueue+Scheduling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Scheduling.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,8 @@
 				57075D3A248D11EA0041ED30 /* DelayedActions.h */,
 				57075D3B248D11EA0041ED30 /* Info.plist */,
 				57075D51248D15A90041ED30 /* RetryUseCase.swift */,
+				57075D57248D1FBC0041ED30 /* Scheduling.swift */,
+				57075D59248D20380041ED30 /* DispatchQueue+Scheduling.swift */,
 			);
 			path = DelayedActions;
 			sourceTree = "<group>";
@@ -206,6 +212,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				57075D52248D15A90041ED30 /* RetryUseCase.swift in Sources */,
+				57075D5A248D20380041ED30 /* DispatchQueue+Scheduling.swift in Sources */,
+				57075D58248D1FBC0041ED30 /* Scheduling.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
