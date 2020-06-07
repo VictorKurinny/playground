@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		57075D41248D11EA0041ED30 /* DelayedActions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57075D37248D11EA0041ED30 /* DelayedActions.framework */; };
-		57075D46248D11EA0041ED30 /* DelayedActionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57075D45248D11EA0041ED30 /* DelayedActionsTests.swift */; };
+		57075D46248D11EA0041ED30 /* RetryUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57075D45248D11EA0041ED30 /* RetryUseCaseTests.swift */; };
 		57075D48248D11EA0041ED30 /* DelayedActions.h in Headers */ = {isa = PBXBuildFile; fileRef = 57075D3A248D11EA0041ED30 /* DelayedActions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		57075D52248D15A90041ED30 /* RetryUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57075D51248D15A90041ED30 /* RetryUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,8 +28,9 @@
 		57075D3A248D11EA0041ED30 /* DelayedActions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DelayedActions.h; sourceTree = "<group>"; };
 		57075D3B248D11EA0041ED30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57075D40248D11EA0041ED30 /* DelayedActionsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DelayedActionsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		57075D45248D11EA0041ED30 /* DelayedActionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayedActionsTests.swift; sourceTree = "<group>"; };
+		57075D45248D11EA0041ED30 /* RetryUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetryUseCaseTests.swift; sourceTree = "<group>"; };
 		57075D47248D11EA0041ED30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		57075D51248D15A90041ED30 /* RetryUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetryUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			children = (
 				57075D3A248D11EA0041ED30 /* DelayedActions.h */,
 				57075D3B248D11EA0041ED30 /* Info.plist */,
+				57075D51248D15A90041ED30 /* RetryUseCase.swift */,
 			);
 			path = DelayedActions;
 			sourceTree = "<group>";
@@ -80,7 +83,7 @@
 		57075D44248D11EA0041ED30 /* DelayedActionsTests */ = {
 			isa = PBXGroup;
 			children = (
-				57075D45248D11EA0041ED30 /* DelayedActionsTests.swift */,
+				57075D45248D11EA0041ED30 /* RetryUseCaseTests.swift */,
 				57075D47248D11EA0041ED30 /* Info.plist */,
 			);
 			path = DelayedActionsTests;
@@ -148,6 +151,7 @@
 				TargetAttributes = {
 					57075D36248D11EA0041ED30 = {
 						CreatedOnToolsVersion = 11.2.1;
+						LastSwiftMigration = 1120;
 					};
 					57075D3F248D11EA0041ED30 = {
 						CreatedOnToolsVersion = 11.2.1;
@@ -195,6 +199,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57075D52248D15A90041ED30 /* RetryUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,7 +207,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57075D46248D11EA0041ED30 /* DelayedActionsTests.swift in Sources */,
+				57075D46248D11EA0041ED30 /* RetryUseCaseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +344,7 @@
 		57075D4C248D11EA0041ED30 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -355,6 +361,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.victor-kurinny.DelayedActions";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -362,6 +369,7 @@
 		57075D4D248D11EA0041ED30 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -385,6 +393,7 @@
 		57075D4F248D11EA0041ED30 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = DelayedActionsTests/Info.plist;
@@ -402,6 +411,7 @@
 		57075D50248D11EA0041ED30 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = DelayedActionsTests/Info.plist;
