@@ -21,12 +21,15 @@ final class SchedulerMock {
     }
 
     func timeTravel(by delay: TimeInterval) {
-        now += delay
+        let targetNow = now + delay
 
-        while let action = actions.first, action.time <= now {
+        while let action = actions.first, action.time <= targetNow {
+            now = action.time
             action.block()
             actions.removeFirst()
         }
+
+        now = targetNow
     }
 
     private var now: TimeInterval = 0.0
@@ -42,7 +45,6 @@ extension SchedulerMock {
 
 final class SchedulerMockTests: XCTestCase {
     func test_schedulesActionAfterDelay() {
-        let accuracy = 1e-6
         let delay = 4.0
         let sut = SchedulerMock()
         var events = [Int]()
@@ -72,5 +74,28 @@ final class SchedulerMockTests: XCTestCase {
         sut.timeTravel(by: 6.0)
 
         XCTAssertEqual(events, [1, 2])
+    }
+
+    func test_schedulesActionInsideScheduledAction() {
+        let delay = 4.0
+        let sut = SchedulerMock()
+        var callbackCalled = false
+
+        sut.schedule(after: delay) {
+            sut.schedule(after: delay) {
+                callbackCalled = true
+            }
+        }
+
+        sut.timeTravel(by: 2 * delay - accuracy)
+        XCTAssertFalse(callbackCalled)
+        sut.timeTravel(by: 2 * accuracy)
+        XCTAssertTrue(callbackCalled)
+    }
+}
+
+extension SchedulerMockTests {
+    private var accuracy: TimeInterval {
+        return 1e-6
     }
 }
