@@ -1,0 +1,7 @@
+SOLID
+
+S - The Single Responsibility Principle (Принцип единственной ответственности)
+O - The Open Closed Principle (Принцип открытости/закрытости)
+L - The Liskov Substitution Principle (Принцип подстановки Барбары Лисков)
+I - The Interface Segregation Principle (Принцип разделения интерфейса)
+D - The Dependency Inversion Principle (Принцип инверсии зависимостей)
