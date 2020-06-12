@@ -18,8 +18,12 @@ class RetryUseCaseTests: XCTestCase {
         }
 
         sut.scheduleRetry()
-        schedulerMock.timeTravel(by: 6.0)
 
-        XCTAssertTrue(callbackCalled)
+        schedulerMock
+            .timeTravel(by: 5.0, before: {
+                XCTAssertFalse(callbackCalled)
+            }, after: {
+                XCTAssertTrue(callbackCalled)
+            })
     }
 }

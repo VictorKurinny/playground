@@ -13,55 +13,64 @@ final class SchedulerMockTests: XCTestCase {
     func test_schedulesActionAfterDelay() {
         let delay = 4.0
         let sut = SchedulerMock()
-        var events = [Int]()
-
-        sut.schedule(after: delay) {
-            events.append(1)
-        }
-
-        sut.timeTravel(by: delay - accuracy)
-        XCTAssertTrue(events.isEmpty)
-        sut.timeTravel(by: 2 * accuracy)
-        XCTAssertEqual(events, [1])
-    }
-
-    func test_schedulesActionsByDelayOrder() {
-        let sut = SchedulerMock()
-        var events = [Int]()
-
-        sut.schedule(after: 5.0) {
-            events.append(2)
-        }
-
-        sut.schedule(after: 2.0) {
-            events.append(1)
-        }
-
-        sut.timeTravel(by: 6.0)
-
-        XCTAssertEqual(events, [1, 2])
-    }
-
-    func test_schedulesActionInsideScheduledAction() {
-        let delay = 4.0
-        let sut = SchedulerMock()
         var callbackCalled = false
 
         sut.schedule(after: delay) {
-            sut.schedule(after: delay) {
+            callbackCalled = true
+        }
+
+        sut
+            .timeTravel(by: delay, before: {
+                XCTAssertFalse(callbackCalled)
+            }, after: {
+                XCTAssertTrue(callbackCalled)
+            })
+    }
+
+    func test_schedulesActionsByDelayOrder() {
+        let delay1 = 2.0
+        let delay2 = 5.0
+        let sut = SchedulerMock()
+        var events = [Int]()
+
+        sut.schedule(after: delay2) {
+            events.append(2)
+        }
+
+        sut.schedule(after: delay1) {
+            events.append(1)
+        }
+
+        sut
+            .timeTravel(by: delay1, before: {
+                XCTAssertTrue(events.isEmpty)
+            }, after: {
+                XCTAssertEqual(events, [1])
+            })
+            .timeTravel(by: delay2 - delay1, before: {
+                XCTAssertEqual(events, [1])
+            }, after: {
+                XCTAssertEqual(events, [1, 2])
+            })
+    }
+
+    func test_schedulesActionInsideScheduledAction() {
+        let delay1 = 4.0
+        let delay2 = 6.0
+        let sut = SchedulerMock()
+        var callbackCalled = false
+
+        sut.schedule(after: delay1) {
+            sut.schedule(after: delay2) {
                 callbackCalled = true
             }
         }
 
-        sut.timeTravel(by: 2 * delay - accuracy)
-        XCTAssertFalse(callbackCalled)
-        sut.timeTravel(by: 2 * accuracy)
-        XCTAssertTrue(callbackCalled)
-    }
-}
-
-extension SchedulerMockTests {
-    private var accuracy: TimeInterval {
-        return 1e-6
+        sut
+            .timeTravel(by: delay1 + delay2, before: {
+                XCTAssertFalse(callbackCalled)
+            }, after: {
+                XCTAssertTrue(callbackCalled)
+            })
     }
 }

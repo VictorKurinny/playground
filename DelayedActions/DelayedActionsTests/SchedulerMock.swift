@@ -15,7 +15,8 @@ final class SchedulerMock: Scheduling {
         actions.sort { $0.time < $1.time }
     }
 
-    func timeTravel(by delay: TimeInterval) {
+    func timeTravel(by delay: TimeInterval, action: (() -> Void)? = nil) {
+        precondition(delay >= 0)
         let targetNow = now + delay
 
         while let action = actions.first, action.time <= targetNow {
@@ -25,10 +26,28 @@ final class SchedulerMock: Scheduling {
         }
 
         now = targetNow
+        action?()
     }
 
+    @discardableResult
+    func timeTravel(by delay: TimeInterval, before: () -> Void, after: () -> Void) -> SchedulerMock {
+        if needsDeltaBeforeChaining {
+            timeTravel(by: delta)
+            needsDeltaBeforeChaining = false
+        }
+
+        timeTravel(by: delay - 2 * delta)
+        before()
+        timeTravel(by: 2 * delta)
+        after()
+
+        return self
+    }
+
+    private let delta = 1e-9
     private var now: TimeInterval = 0.0
     private var actions = [Action]()
+    private var needsDeltaBeforeChaining = true
 }
 
 extension SchedulerMock {
